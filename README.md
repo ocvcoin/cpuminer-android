@@ -1,39 +1,22 @@
-ocvminer-android
-================
+Ocvcion Android Miner
 
-An Android application wrapper for Pooler's OCVMiner
+forked from mdelling/cpuminer-android
 
-Compiling libcurl
-================
 
-To compile libcurl, you first need a standalone Android NDK toolchain. This
-can be built using the make-standalone-toolchain.sh script in build/tools.
-Here I'm going to assume we're putting the standalone toolchain in /opt/.
 
-	# Setup destination directory
-	sudo mkdir -p /opt/android-ndk-r9d/arm/
-	sudo mkdir -p /opt/android-ndk-r9d/mips/
-	sudo mkdir -p /opt/android-ndk-r9d/x86/
+Build on UBUNTU
+----------------
 
-	# Get Android NDK
-	curl -O http://dl.google.com/android/ndk/android-ndk-r9d-darwin-x86_64.tar.bz2
-	tar -xvf android-ndk-r9d-darwin-x86_64.tar.bz2
-	cd android-ndk-r9d
 
-	# Build standalone NDK
-	cd build/tools
-	sudo ./make-standalone-toolchain.sh --ndk-dir=../../ --install-dir=/opt/android-ndk-r9d/arm/ --verbose --system=darwin-x86_64
-	sudo ./make-standalone-toolchain.sh --arch=mips --ndk-dir=../../ --install-dir=/opt/android-ndk-r9d/mips/ --verbose --system=darwin-x86_64
-	sudo ./make-standalone-toolchain.sh --arch=x86 --ndk-dir=../../ --install-dir=/opt/android-ndk-r9d/x86/ --verbose --system=darwin-x86_64
+```
+sudo apt update
 
-Once you have the standalone NDK toolchain, you need to download and extract
-the source for libcurl.
+sudo apt -y install git
 
-	# Get libcurl source
-	curl -O http://curl.haxx.se/download/curl-7.35.0.tar.bz2
-	tar -xvf curl-7.35.0.tar.bz2
+git clone https://github.com/ocvcoin/cpuminer-android.git
 
-The last step is to use the included build-libcurl.sh script to compile libcurl
-and move the compiled library into the project.
+cd cpuminer-android && sudo bash build.sh
 
-	./build-libcurl.sh [path to libcurl]
+```
+
+When the script finishes running, it will have compiled all the required NDK shared objects. Now you can copy the "cpuminer-android" folder to a PC with Android Studio installed, import the project and build the APK.
