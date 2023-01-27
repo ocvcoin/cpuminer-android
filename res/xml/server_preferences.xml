@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:key="@string/pref_server_screen_key"
+	android:title="@string/pref_server_title" >
+
+		<EditTextPreference
+			android:key="@string/pref_server_key"
+			android:title="@string/pref_server"
+			android:inputType="textFilter"
+			android:defaultValue="fi.mining4people.com" />
+
+		<EditTextPreference
+			android:key="@string/pref_port_key"
+			android:title="@string/pref_port"
+			android:inputType="number"
+			android:maxLength="5"
+			android:defaultValue="3376" />
+
+		<ListPreference
+			android:key="@string/pref_protocol_key"
+			android:title="@string/pref_protocol"
+			android:entries="@array/pref_protocol_entries"
+			android:entryValues="@array/pref_protocol_values"
+			android:defaultValue="stratum+tcp://" />
+
+		<EditTextPreference
+			android:key="@string/pref_username_key"
+			android:title="@string/pref_username"
+			android:inputType="textFilter" />
+
+		<EditTextPreference
+			android:key="@string/pref_password_key"
+			android:title="@string/pref_password"
+			android:inputType="textFilter"
+			android:defaultValue="x" />
+
+		<ListPreference
+			android:key="@string/pref_algorithm_key"
+			android:title="@string/pref_algorithm"
+			android:entries="@array/pref_algorithm_entries"
+			android:entryValues="@array/pref_algorithm_values"
+			android:defaultValue="ocv2" />
+
+</PreferenceScreen>
