@@ -4,7 +4,7 @@ forked from mdelling/cpuminer-android
 
 
 
-Build on UBUNTU
+Build on UBUNTU (UBUNTU 16 ONLY)
 ----------------
 
 
