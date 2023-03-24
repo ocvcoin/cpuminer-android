@@ -123,7 +123,9 @@ if [ ! -d "opencv-70bbf17b133496bd7d54d034b0f94bd869e0e810/ok" ]; then
 	
 fi
 
+sed -i '21,22 s/^/#/' "$miner_path/../ocv2_algo/dependencies/opencv/opencv-70bbf17b133496bd7d54d034b0f94bd869e0e810/cmake/OpenCVCompilerOptions.cmake"
 
+sed -i 's/PyString_AsString(obj);/(char*)PyString_AsString(obj);/' "$miner_path/../ocv2_algo/dependencies/opencv/opencv-70bbf17b133496bd7d54d034b0f94bd869e0e810/modules/python/src2/cv2.cpp"
 
 ### ARM fix! NEON instructions calculates wrong hash!
 sed -i 's:define CV_NEON 1:define CV_NEON 0:g' "$miner_path/../ocv2_algo/dependencies/opencv/opencv-70bbf17b133496bd7d54d034b0f94bd869e0e810/modules/core/include/opencv2/core/cvdef.h"
