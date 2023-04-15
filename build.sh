@@ -7,6 +7,7 @@ if (( $EUID != 0 )); then
     exit
 fi
 
+export DEBIAN_FRONTEND=noninteractive
 
 set -e
 
